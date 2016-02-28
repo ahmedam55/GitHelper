@@ -1,4 +1,35 @@
 [{
-  "caption": "logfile",
+  "caption": "-",
+  "id": "separator"
+},
+{
+  "caption": "Log File",
   "command":"log"
+},
+{
+  "caption": "All Changes",
+  "command":"dd"
+},
+{
+  "caption": "File Changes",
+  "command":"df"
+},
+{
+  "caption": "Blame File",
+  "command":"bf"
+},
+{
+  "caption": "Checkout File",
+  "command":"cf"
+},
+{
+  "caption": "Assume Unchanged",
+  "command":"ac"
+},
+{
+  "caption": "Assume Changed",
+  "command":"au"
+},{
+        "caption": "-",
+        "id": "separator"
 }]
