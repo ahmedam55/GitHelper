@@ -1,0 +1,61 @@
+[
+{
+
+"caption":"Open Windows",
+"command":"oe"
+
+},{
+
+"caption":"Git Log File",
+"command":"log"
+
+}
+
+,{
+
+"caption":"Git All Changes",
+"command":"dd"
+
+}
+
+,{
+
+"caption":"Git File Changes",
+"command":"df"
+
+}
+
+
+,{
+
+"caption":"Git Blame File",
+"command":"bf"
+
+}
+
+,{
+
+"caption":"Git Checkout File",
+"command":"cf"
+
+}
+
+,{
+
+"caption":"Git Assume Unchanged",
+"command":"ac"
+
+}
+
+,{
+
+"caption":"Git Assume Changed",
+"command":"au"
+
+}
+
+
+
+
+
+]
