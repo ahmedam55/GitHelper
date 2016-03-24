@@ -29,7 +29,12 @@
 {
   "caption": "Assume Changed",
   "command":"au"
-},{
+},
+{
+  "caption": "Shunk History",
+  "command":"sh"
+},
+{
         "caption": "-",
         "id": "separator"
 }]

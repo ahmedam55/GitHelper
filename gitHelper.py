@@ -32,10 +32,12 @@ class auCommand(sublime_plugin.WindowCommand):
 	def run(self):
 		p=Popen(['CMD ',' /c cd ' +self.window.project_data()['folders'][0]['path'] +'&& git update-index --no-assume-unchanged '+self.window.active_view().file_name()])
 
+class shCommand(sublime_plugin.WindowCommand):
+	def run(self):
+		beginline=str(self.window.active_view().rowcol(self.window.active_view().sel()[0].begin())[0]+1)
+		endline=str(self.window.active_view().rowcol(self.window.active_view().sel()[0].end())[0]+1)
 
-
-
-
+		p=Popen(['CMD ',' /c cd ' +self.window.project_data()['folders'][0]['path'] +'&& git log --pretty=short -u -L '+beginline+','+endline+':'+self.window.active_view().file_name()+'>h&&subl -w h && del h'])
 
 
 # unrelated

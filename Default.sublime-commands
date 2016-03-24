@@ -54,7 +54,12 @@
 
 }
 
+,{
 
+"caption":"Shunk History",
+"command":"sh"
+
+}
 
 
 
