@@ -39,6 +39,9 @@ class shCommand(sublime_plugin.WindowCommand):
 
 		p=Popen(['CMD ',' /c cd ' +self.window.project_data()['folders'][0]['path'] +'&& git log --pretty=short -u -L '+beginline+','+endline+':'+self.window.active_view().file_name()+'>h&&subl -w h && del h'])
 
+class ccCommand(sublime_plugin.WindowCommand):
+	def run(self):
+		p=Popen(['CMD ',' /c cd ' +self.window.project_data()['folders'][0]['path'] +'&& git add . && git commit '
 
 # unrelated
 class oeCommand(sublime_plugin.WindowCommand):

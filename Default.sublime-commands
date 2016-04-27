@@ -24,8 +24,13 @@
 "command":"df"
 
 }
+,
+{
 
+"caption":"Commit Changes",
+"command":"cc"
 
+}
 ,{
 
 "caption":"Git Blame File",
@@ -60,6 +65,8 @@
 "command":"sh"
 
 }
+
+
 
 
 

@@ -15,6 +15,12 @@
   "command":"df"
 },
 {
+
+"caption":"Commit Changes",
+"command":"cc"
+
+},
+{
   "caption": "Blame File",
   "command":"bf"
 },
