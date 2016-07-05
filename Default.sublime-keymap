@@ -1,6 +1,6 @@
 [
 	{
-		"keys": ["alt+ctrl+shift+e"],
+		"keys": ["super+alt+shift+o"],
 		"command": "oe"
 	}
 ]

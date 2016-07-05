@@ -1,0 +1,12 @@
+set appName to "python"
+
+if application appName is running then
+
+    tell application appName
+
+        activate
+    end tell
+    return "Running"
+else
+    return "Not running"
+end if
