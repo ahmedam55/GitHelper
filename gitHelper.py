@@ -61,6 +61,9 @@ class shCommand(sublime_plugin.WindowCommand):#fdsfsdf
         cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&&  git log --pretty=short -u -L '+beginline+','+endline+':'+self.window.active_view().file_name()+'>h && subl -w h && rm h'
         p = subprocess.Popen(cmd_line, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
+class ccCommand(sublime_plugin.WindowCommand):
+	def run(self):
+		p=Popen(['CMD ',' /c cd ' +self.window.project_data()['folders'][0]['path'] +'&& git add . && git commit '
 
 # unrelated
 class oeCommand(sublime_plugin.WindowCommand):
