@@ -5,69 +5,66 @@ import subprocess
 class logCommand(sublime_plugin.WindowCommand):
     def run(self):
         cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&& gitk '+self.window.active_view().file_name()
-        p = subprocess.Popen(cmd_line, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        # out = p.communicate()[0]
-        # print(out)
-        # p=subprocess.Popen("sudo sh ~/gitk.sh", shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        # out = p.communicate()[0]
-        # print(out)
+        sublime.set_clipboard(cmd_line)
+        self.window.run_command('open_terminal')
 
 
 class ddCommand(sublime_plugin.WindowCommand):
     def run(self):
-        # cmd_line = 'cd "' +self.window.project_data()['folders'][0]['path'] +'" && sh gittt.sh'
-        # installed_dir,_=__name__.split('.')
-        # package_dir = os.path.join(sublime.packages_path(), installed_dir)
-        # p = subprocess.Popen([r'/Users/ahmed/Library/Application Support/Sublime Text 3/Packages/gitHelper/terminal.sh'], cwd=r"/Users/ahmed/Library/Application Support/Sublime Text 3/Packages/gitHelper/")
-        # os.system('''tell application "Terminal" do shell script "open -a firefox" ''')
-        # os.system(''' sh "/Users/ahmed/Library/Application Support/Sublime Text 3/Packages/gitHelper/terminal.sh" ''')
-        # subprocess.Popen(["/Users/ahmed/Library/Application Support/Sublime Text 3/Packages/gitHelper/terminal.sh"] ,shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        # print(p.communicate())
-        # print(installed_dir,package_dir)
-        cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&& git difftool -d'
-        p = subprocess.Popen(cmd_line, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&& git -no-color difftool -d'
+        sublime.set_clipboard(cmd_line)
+        self.window.run_command('open_terminal')
+
 
 class dfCommand(sublime_plugin.WindowCommand):
     def run(self):
-        cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&& git difftool '+self.window.active_view().file_name()+' -y'
-        p = subprocess.Popen(cmd_line, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        # os.system('''osascript -e 'tell application "python" to activate' ''')
+        cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&& git -no-color difftool '+self.window.active_view().file_name()+' -y'
+        sublime.set_clipboard(cmd_line)
+        self.window.run_command('open_terminal')
+
  
 class bfCommand(sublime_plugin.WindowCommand):
     def run(self):
-        cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&& git blame '+self.window.active_view().file_name()+'>h&&subl -w h && rm h'
-        p = subprocess.Popen(cmd_line, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&& git -no-color blame '+self.window.active_view().file_name()+'>h&&subl -w h && rm h'
+        sublime.set_clipboard(cmd_line)
+        self.window.run_command('open_terminal')
+
 
 class cfCommand(sublime_plugin.WindowCommand):
     def run(self):
-        cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&& git checkout '+self.window.active_view().file_name()
-        p = subprocess.Popen(cmd_line, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&& git -no-color checkout '+self.window.active_view().file_name()
+        sublime.set_clipboard(cmd_line)
+        self.window.run_command('open_terminal')
+
 
 class acCommand(sublime_plugin.WindowCommand):
     def run(self):
-        cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&& git update-index --assume-unchanged '+self.window.active_view().file_name()
-        p = subprocess.Popen(cmd_line, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&& git -no-color update-index --assume-unchanged '+self.window.active_view().file_name()
+        sublime.set_clipboard(cmd_line)
+        self.window.run_command('open_terminal')
+
 
 class auCommand(sublime_plugin.WindowCommand):
     def run(self):
-        cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&& git update-index --no-assume-unchanged '+self.window.active_view().file_name()
-        p = subprocess.Popen(cmd_line, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&& git -no-color update-index --no-assume-unchanged '+self.window.active_view().file_name()
+        sublime.set_clipboard(cmd_line)
+        self.window.run_command('open_terminal')
 
-class shCommand(sublime_plugin.WindowCommand):#fdsfsdf
+
+class shCommand(sublime_plugin.WindowCommand):
     def run(self):
         beginline=str(self.window.active_view().rowcol(self.window.active_view().sel()[0].begin())[0]+1)
         endline=str(self.window.active_view().rowcol(self.window.active_view().sel()[0].end())[0]+1)
 
-        cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&&  git log --pretty=short -u -L '+beginline+','+endline+':'+self.window.active_view().file_name()+'>h && subl -w h && rm h'
-        p = subprocess.Popen(cmd_line, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        cmd_line = 'cd ' +self.window.project_data()['folders'][0]['path'] +'&&  git -no-color log --pretty=short -u -L '+beginline+','+endline+':'+self.window.active_view().file_name()+'>h && subl -w h && rm h'
+        sublime.set_clipboard(cmd_line)
+        self.window.run_command('open_terminal')
 
-class ccCommand(sublime_plugin.WindowCommand):
-	def run(self):
-		p=Popen(['CMD ',' /c cd ' +self.window.project_data()['folders'][0]['path'] +'&& git add . && git commit '
 
-# unrelated
 class oeCommand(sublime_plugin.WindowCommand):
     def run(self):
         cmd_line = 'cd "' +self.window.project_data()['folders'][0]['path'] +'" &&  open .'
-        p = subprocess.Popen(cmd_line, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        sublime.set_clipboard(cmd_line)
+        self.window.run_command('open_terminal')
+
         
